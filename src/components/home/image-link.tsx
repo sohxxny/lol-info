@@ -3,7 +3,7 @@ import Link from 'next/link';
 import championsImage from '../../public/home-images/champions-image.webp';
 import rotationImage from '../../public/home-images/rotation-image.webp';
 import itemsImage from '../../public/home-images/items-image.webp';
-import { LinkType } from '@/types/common/types';
+import { LinkType } from '@/types/common-types';
 
 export const ImageLink = ({ type }: { type: LinkType }) => {
   return (
