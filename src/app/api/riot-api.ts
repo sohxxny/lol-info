@@ -1,7 +1,8 @@
 import { Item, RowItem } from '@/types/item';
 import { API_ITEMS_URL } from './api-endpoints';
 
-export const getItems = async () => {
+// * 아이템 목록을 가져와서 반환하는 함수
+export const getItems = async (): Promise<Item[]> => {
   const result = await fetch(API_ITEMS_URL, { cache: 'force-cache' });
   const data = await result.json();
 
