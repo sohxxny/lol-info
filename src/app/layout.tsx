@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
   title: 'LOL 가이드',
@@ -14,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased flex flex-col`}>
+        <header className="w-full shadow-lg">
+          <Header />
+        </header>
+        <main className="w-full">{children}</main>
+        <footer className="w-full fixed bottom-0">
+          <Footer />
+        </footer>
+      </body>
     </html>
   );
 }
