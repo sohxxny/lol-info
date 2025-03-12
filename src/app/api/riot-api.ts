@@ -1,9 +1,8 @@
 import { Item, RowItem } from '@/types/item';
+import { API_ITEMS_URL } from './api-endpoints';
 
 export const getItems = async () => {
-  const result = await fetch(
-    'https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/item.json'
-  );
+  const result = await fetch(API_ITEMS_URL, { cache: 'force-cache' });
   const data = await result.json();
 
   // 데이터를 배열로 변환
