@@ -4,17 +4,15 @@ import Image from 'next/image';
 
 export const ItemCard = ({ item }: { item: Item }) => {
   return (
-    <ul className="flex flex-col min-w-[100px] max-w-[200px]">
-      <li>{item.name}</li>
-      <li>
-        <Image
-          src={API_ITEMS_IMAGE_URL(item.image)}
-          alt={item.name}
-          width={50}
-          height={50}
-        />
-      </li>
-      <li>{item.plaintext}</li>
-    </ul>
+    <div className="h-full w-full flex flex-col items-center gap-2 bg-gray-100 p-5 rounded-xl">
+      <h3 className="font-bold">{item.name}</h3>
+      <Image
+        src={API_ITEMS_IMAGE_URL(item.image)}
+        alt={item.name}
+        width={100}
+        height={100}
+      />
+      <p className="text-sm">{item.plaintext}</p>
+    </div>
   );
 };
