@@ -42,6 +42,7 @@ export const getChampions = async (): Promise<Champion[]> => {
   ).map((value: RowChampion) => {
     return {
       id: value.id,
+      key: value.key,
       name: value.name,
       title: value.title,
       image: value.image.full,

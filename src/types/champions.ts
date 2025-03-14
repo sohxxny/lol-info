@@ -1,5 +1,6 @@
 export type Champion = {
   id: string;
+  key: string;
   name: string;
   title: string;
   image: string;
@@ -7,6 +8,7 @@ export type Champion = {
 
 export type RowChampion = {
   id: string;
+  key: string;
   name: string;
   title: string;
   image: { full: string };
