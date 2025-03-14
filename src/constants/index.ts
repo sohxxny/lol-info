@@ -7,3 +7,7 @@ export const API_ITEMS_URL = `
   ${BASE_URL}/data/ko_KR/item.json`;
 export const API_ITEMS_IMAGE_URL = (image: string) =>
   `${BASE_URL}/img/item/${image}`;
+export const API_CHAMPIONS_URL = `${BASE_URL}/data/ko_KR/champion.json`;
+
+// revalidate 시간을 위한 하루 초수 상수
+export const DAY_IN_SECONDS = 86400;

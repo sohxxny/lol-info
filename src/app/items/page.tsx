@@ -1,5 +1,5 @@
 import { ItemList } from '@/components/items/item-list';
-import { getItems } from '../api/riot-api';
+import { getItems } from '../../api/riot-api';
 import { Item } from '@/types/item';
 import { Metadata } from 'next';
 
