@@ -6,7 +6,6 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'ddragon.leagueoflegends.com',
-        pathname: '/**',
       },
     ],
     formats: ['image/avif', 'image/webp'],

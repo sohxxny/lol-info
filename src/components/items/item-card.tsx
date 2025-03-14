@@ -1,4 +1,4 @@
-import { API_ITEMS_IMAGE_URL } from '@/app/api/api-endpoints';
+import { API_ITEMS_IMAGE_URL } from '@/constants';
 import { Item } from '@/types/item';
 import Image from 'next/image';
 
