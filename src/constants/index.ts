@@ -7,8 +7,10 @@ export const API_ITEMS_URL = `
   ${BASE_URL}/data/ko_KR/item.json`;
 export const API_ITEMS_IMAGE_URL = (image: string) =>
   `${BASE_URL}/img/item/${image}`;
+export const API_CHAMPION_URL = (name: string) =>
+  `${BASE_URL}/data/ko_KR/champion/${name}.json`;
 export const API_CHAMPIONS_URL = `${BASE_URL}/data/ko_KR/champion.json`;
-export const API_CHAMPIONS_IMAGE_URL = (image: string) =>
+export const API_CHAMPION_IMAGE_URL = (image: string) =>
   `${BASE_URL}/img/champion/${image}`;
 
 // revalidate 시간을 위한 하루 초수 상수

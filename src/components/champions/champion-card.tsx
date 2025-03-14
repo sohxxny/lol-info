@@ -1,4 +1,4 @@
-import { API_CHAMPIONS_IMAGE_URL, API_ITEMS_IMAGE_URL } from '@/constants';
+import { API_CHAMPION_IMAGE_URL } from '@/constants';
 import { Champion } from '@/types/champions';
 import Image from 'next/image';
 
@@ -9,7 +9,7 @@ export const ChampionCard = ({ champion }: { champion: Champion }) => {
       <li className="font-bold">{champion.name}</li>
       <li>
         <Image
-          src={API_CHAMPIONS_IMAGE_URL(champion.image)}
+          src={API_CHAMPION_IMAGE_URL(champion.image)}
           alt={champion.name}
           width={100}
           height={100}

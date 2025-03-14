@@ -4,6 +4,8 @@ export type Champion = {
   name: string;
   title: string;
   image: string;
+  lore: string;
+  info: { attack: number; defense: number; magic: number; difficulty: number };
 };
 
 export type RowChampion = {
@@ -12,4 +14,6 @@ export type RowChampion = {
   name: string;
   title: string;
   image: { full: string };
+  lore: string;
+  info: { attack: number; defense: number; magic: number; difficulty: number };
 };

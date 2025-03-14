@@ -1,5 +1,6 @@
 import { Item, RowItem } from '@/types/item';
 import {
+  API_CHAMPION_URL,
   API_CHAMPIONS_URL,
   API_ITEMS_URL,
   DAY_IN_SECONDS,
@@ -46,8 +47,26 @@ export const getChampions = async (): Promise<Champion[]> => {
       name: value.name,
       title: value.title,
       image: value.image.full,
+      lore: value.lore,
+      info: value.info,
     };
   });
 
   return dataArray;
+};
+
+// * 하나의 챔피언 정보를 가져오는 함수
+export const getChampion = async (name: string): Promise<Champion> => {
+  const result = await fetch(API_CHAMPION_URL(name), { cache: 'no-cache' });
+  const data = await result.json();
+  const value = data.data[name];
+  return {
+    id: value.id,
+    key: value.key,
+    name: value.name,
+    title: value.title,
+    image: value.image.full,
+    lore: value.lore,
+    info: value.info,
+  };
 };
