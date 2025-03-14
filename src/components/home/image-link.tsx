@@ -3,13 +3,13 @@ import Link from 'next/link';
 import championsImage from '../../public/home-images/champions-image.webp';
 import rotationImage from '../../public/home-images/rotation-image.webp';
 import itemsImage from '../../public/home-images/items-image.webp';
-import { LinkType } from '@/types/common/types';
+import { LinkType } from '@/types/common-types';
 
 export const ImageLink = ({ type }: { type: LinkType }) => {
   return (
     <Link
       href={`/${type}`}
-      className="flex flex-col flex-1 items-center max-w-[400px] gap-2"
+      className="flex max-w-[400px] flex-1 flex-col items-center gap-2"
     >
       <Image
         src={LINK_INFO[type].src}

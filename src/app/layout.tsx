@@ -16,12 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased flex flex-col`}>
+      <body className={`flex flex-col antialiased`}>
         <header className="w-full shadow-lg">
           <Header />
         </header>
         <main className="w-full">{children}</main>
-        <footer className="w-full fixed bottom-0">
+        <footer className="fixed bottom-0 w-full">
           <Footer />
         </footer>
       </body>
