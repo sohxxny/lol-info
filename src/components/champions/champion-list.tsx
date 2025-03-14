@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ChampionCard } from './champion-card';
 import { Champion } from '@/types/champions';
 
@@ -7,7 +8,9 @@ export const ChampionList = ({ champions }: { champions: Champion[] }) => {
     <ul className="grid w-full grid-cols-[repeat(auto-fit,minmax(200px,1fr))] justify-items-center gap-5">
       {champions.map((champion) => (
         <li key={champion.key} className="w-full max-w-[250px]">
-          <ChampionCard champion={champion} />
+          <Link href={`champions/${champion.id}`}>
+            <ChampionCard champion={champion} />
+          </Link>
         </li>
       ))}
     </ul>
