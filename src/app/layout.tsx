@@ -20,7 +20,7 @@ export default function RootLayout({
         <header className="w-full shadow-lg">
           <Header />
         </header>
-        <main className="w-full">{children}</main>
+        <main className="w-full p-[50px]">{children}</main>
         <footer className="fixed bottom-0 w-full">
           <Footer />
         </footer>

@@ -3,10 +3,17 @@ import {
   API_CHAMPION_URL,
   API_CHAMPIONS_URL,
   API_ITEMS_URL,
+  API_ROTATION_URL,
   DAY_IN_SECONDS,
 } from '../constants/index';
 import { stripTags } from '@/utils/utils';
-import { Champion, RowChampion } from '@/types/champions';
+import {
+  Champion,
+  ChampionDetail,
+  ChampionSpell,
+  RowChampion,
+  RowChampionSpell,
+} from '@/types/champions';
 
 // * 아이템 목록을 가져와서 반환하는 함수
 export const getItems = async (): Promise<Item[]> => {
@@ -47,8 +54,6 @@ export const getChampions = async (): Promise<Champion[]> => {
       name: value.name,
       title: value.title,
       image: value.image.full,
-      lore: value.lore,
-      info: value.info,
     };
   });
 
@@ -56,7 +61,7 @@ export const getChampions = async (): Promise<Champion[]> => {
 };
 
 // * 하나의 챔피언 정보를 가져오는 함수
-export const getChampion = async (name: string): Promise<Champion> => {
+export const getChampion = async (name: string): Promise<ChampionDetail> => {
   const result = await fetch(API_CHAMPION_URL(name), { cache: 'no-cache' });
   const data = await result.json();
   const value = data.data[name];
@@ -67,6 +72,13 @@ export const getChampion = async (name: string): Promise<Champion> => {
     title: value.title,
     image: value.image.full,
     lore: value.lore,
-    info: value.info,
+    spells: value.spells.map((spell: RowChampionSpell) => {
+      return {
+        id: spell.id,
+        name: spell.name,
+        description: spell.description,
+        image: spell.image.full,
+      };
+    }),
   };
 };
