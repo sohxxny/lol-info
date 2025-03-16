@@ -62,7 +62,7 @@ export const getChampions = async (): Promise<Champion[]> => {
 
 // * 하나의 챔피언 정보를 가져오는 함수
 export const getChampion = async (name: string): Promise<ChampionDetail> => {
-  const result = await fetch(API_CHAMPION_URL(name), { cache: 'no-cache' });
+  const result = await fetch(API_CHAMPION_URL(name), { cache: 'no-store' });
   const data = await result.json();
   const value = data.data[name];
   return {
@@ -81,4 +81,17 @@ export const getChampion = async (name: string): Promise<ChampionDetail> => {
       };
     }),
   };
+};
+
+// * 챔피언 로테이션 목록을 가져와서 반환하는 함수
+export const getRotation = async (): Promise<Champion[]> => {
+  const champions: Champion[] = await getChampions();
+  const result = await fetch(API_ROTATION_URL, {
+    cache: 'no-cache',
+  });
+  const data = await result.json();
+  const rotationChampions = champions.filter((champion: Champion) => {
+    return data.freeChampionIds.includes(champion.key);
+  });
+  return rotationChampions;
 };
