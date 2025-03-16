@@ -10,7 +10,6 @@ import { stripTags } from '@/utils/utils';
 import {
   Champion,
   ChampionDetail,
-  ChampionSpell,
   RowChampion,
   RowChampionSpell,
 } from '@/types/champions';
@@ -91,7 +90,7 @@ export const getRotation = async (): Promise<Champion[]> => {
   });
   const data = await result.json();
   const rotationChampions = champions.filter((champion: Champion) => {
-    return data.freeChampionIds.includes(champion.key);
+    return data.freeChampionIds.includes(parseInt(champion.key));
   });
   return rotationChampions;
 };
