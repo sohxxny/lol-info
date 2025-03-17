@@ -5,6 +5,7 @@ import rotationImage from '../../public/home-images/rotation-image.webp';
 import itemsImage from '../../public/home-images/items-image.webp';
 import { LinkType } from '@/types/common-types';
 
+// * 이미지 링크 컴포넌트
 export const ImageLink = ({ type }: { type: LinkType }) => {
   return (
     <Link
