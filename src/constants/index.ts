@@ -17,6 +17,7 @@ export const API_CHAMPION_SPELL_IMAGE = (image: string) =>
   `${BASE_URL}/img/spell/${image}`;
 
 export const API_ROTATION_URL = `https://kr.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${API_KEY}`;
+export const ROUTE_HANDLER_ROTATION_URL = 'http://localhost:3000/api/rotation';
 
 // revalidate 시간을 위한 하루 초수 상수
 export const DAY_IN_SECONDS = 86400;

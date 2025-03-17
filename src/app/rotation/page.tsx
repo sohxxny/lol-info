@@ -1,14 +1,24 @@
 'use client';
 
+import { ChampionList } from '@/components/champions/champion-list';
+import { LoadingSpinners } from '@/components/common/loading-spinners';
 import { useGetRotation } from '@/tanstack/queries';
+import { Suspense } from 'react';
 
 const RotationPage = () => {
-  const { data: rotation, isLoading, error } = useGetRotation();
+  return (
+    <div className="flex w-full flex-col items-center gap-10">
+      <h2 className="text-xl font-bold">이번주 무료 챔피언</h2>
+      <Suspense fallback={<LoadingSpinners />}>
+        <RotationPageList />
+      </Suspense>
+    </div>
+  );
+};
 
-  if (isLoading) return <div>로딩중입니다...</div>;
-  if (error) return <div>에러 발생: {error.message}</div>;
-
-  return <></>;
+const RotationPageList = () => {
+  const { data: rotation } = useGetRotation();
+  return <ChampionList champions={rotation} />;
 };
 
 export default RotationPage;

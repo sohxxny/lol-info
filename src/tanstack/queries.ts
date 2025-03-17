@@ -1,11 +1,15 @@
+import { ROUTE_HANDLER_ROTATION_URL } from '@/constants';
 import { Champion } from '@/types/champions';
-import { useQuery, UseQueryResult } from '@tanstack/react-query';
+import {
+  useSuspenseQuery,
+  UseSuspenseQueryResult,
+} from '@tanstack/react-query';
 
-export const useGetRotation = (): UseQueryResult<Champion[], Error> => {
-  return useQuery({
+export const useGetRotation = (): UseSuspenseQueryResult<Champion[]> => {
+  return useSuspenseQuery({
     queryKey: ['rotation'],
     queryFn: async () => {
-      const response = await fetch(`/api/riot`);
+      const response = await fetch(ROUTE_HANDLER_ROTATION_URL);
       return response.json();
     },
   });

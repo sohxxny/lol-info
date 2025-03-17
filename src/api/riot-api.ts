@@ -85,9 +85,7 @@ export const getChampion = async (name: string): Promise<ChampionDetail> => {
 // * 챔피언 로테이션 목록을 가져와서 반환하는 함수
 export const getRotation = async (): Promise<Champion[]> => {
   const champions: Champion[] = await getChampions();
-  const result = await fetch(API_ROTATION_URL, {
-    cache: 'no-cache',
-  });
+  const result = await fetch(API_ROTATION_URL);
   const data = await result.json();
   const rotationChampions = champions.filter((champion: Champion) => {
     return data.freeChampionIds.includes(parseInt(champion.key));
