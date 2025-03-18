@@ -3,6 +3,8 @@ import '../styles/globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { QueryProvider } from '@/tanstack/provider';
+import { ThemeButton } from '@/components/common/theme-button';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'LOL 가이드',
@@ -16,17 +18,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`flex flex-col antialiased`}>
-        <QueryProvider>
-          <header className="w-full shadow-lg">
-            <Header />
-          </header>
-          <main className="w-full p-[50px]">{children}</main>
-          <footer className="fixed bottom-0 w-full">
-            <Footer />
-          </footer>
-        </QueryProvider>
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <QueryProvider>
+            <header className="fixed flex w-full justify-center bg-background shadow-lg">
+              <Header />
+            </header>
+            <main className="w-full p-[50px] pt-[100px]">{children}</main>
+            <ThemeButton className="fixed right-5 top-20" />
+            {/* <footer className="fixed bottom-0 w-full">
+              <Footer />
+            </footer> */}
+          </QueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
