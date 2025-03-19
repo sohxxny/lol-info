@@ -22,7 +22,7 @@ export const ErrorComponent = ({
             reset();
           })
         }
-        className="m-5 rounded-xl bg-gray-200 px-4 py-2"
+        className="bg-primary m-5 rounded-xl px-4 py-2"
       >
         다시 시도
       </button>

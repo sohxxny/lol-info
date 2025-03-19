@@ -5,7 +5,7 @@ import Image from 'next/image';
 // * 스펠 카드 컴포넌트
 export const SpellCard = ({ spell }: { spell: ChampionSpell }) => {
   return (
-    <div className="flex h-full w-full flex-col items-center gap-3 rounded-xl bg-gray-100 p-5">
+    <div className="bg-primary flex h-full w-full flex-col items-center gap-3 rounded-xl p-5">
       <h4 className="font-bold">{spell.name}</h4>
       <Image
         src={API_CHAMPION_SPELL_IMAGE(spell.image)}
