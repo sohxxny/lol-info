@@ -1,5 +1,5 @@
 import { ROUTE_HANDLER_ROTATION_URL } from '@/constants';
-import { Champion } from '@/types/champions';
+import { Champion } from '@/types/champions-types';
 import {
   useSuspenseQuery,
   UseSuspenseQueryResult,

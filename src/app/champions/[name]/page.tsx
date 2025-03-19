@@ -1,7 +1,7 @@
 import { getChampion } from '@/api/riot-api';
 import { SpellCard } from '@/components/champions/spell-card';
 import { API_CHAMPION_IMAGE_URL } from '@/constants';
-import { ChampionDetail } from '@/types/champions';
+import { ChampionDetail } from '@/types/champions-types';
 import Image from 'next/image';
 
 export async function generateMetadata({
@@ -24,8 +24,8 @@ const ChampionDetailPage = async ({ params }: { params: { name: string } }) => {
         <h3 className="text-4xl font-bold">{champion.name}</h3>
         <p className="text-lg font-bold">{champion.title}</p>
         <Image
-          src={API_CHAMPION_IMAGE_URL(champion.image)}
-          alt={champion.image}
+          src={API_CHAMPION_IMAGE_URL(champion.image.full)}
+          alt={champion.image.full}
           width={200}
           height={200}
         />

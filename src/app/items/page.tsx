@@ -1,11 +1,6 @@
 import { ItemList } from '@/components/items/item-list';
-import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { LoadingSpinners } from '@/components/common/loading-spinners';
-
-export const metadata: Metadata = {
-  title: 'LOL 가이드 - 아이템 리스트',
-};
 
 const ItemsPage = async () => {
   return (

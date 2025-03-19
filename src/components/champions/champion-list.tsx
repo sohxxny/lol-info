@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ChampionCard } from './champion-card';
-import { Champion } from '@/types/champions';
+import { Champion } from '@/types/champions-types';
 
 // * 챔피언 리스트 컴포넌트
 export const ChampionList = ({ champions }: { champions: Champion[] }) => {

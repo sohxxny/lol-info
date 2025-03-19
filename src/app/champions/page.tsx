@@ -1,13 +1,8 @@
 import { getChampions } from '@/api/riot-api';
 import { ChampionList } from '@/components/champions/champion-list';
 import { LoadingSpinners } from '@/components/common/loading-spinners';
-import { Champion } from '@/types/champions';
-import { Metadata } from 'next';
+import { Champion } from '@/types/champions-types';
 import { Suspense } from 'react';
-
-export const metadata: Metadata = {
-  title: 'LOL 가이드 - 챔피언 리스트',
-};
 
 const ChampionsPage = () => {
   return (

@@ -5,6 +5,7 @@ import { IoIosMoon } from 'react-icons/io';
 import { IoSunny } from 'react-icons/io5';
 import { IoIosSettings } from 'react-icons/io';
 
+// * 다크/라이크 모드 토글 버튼
 export const ThemeButton = ({ className }: { className: string }) => {
   const { theme, setTheme } = useTheme();
 
@@ -20,7 +21,7 @@ export const ThemeButton = ({ className }: { className: string }) => {
 
   return (
     <button
-      className={`bg-secondary flex h-10 w-10 items-center justify-center rounded-xl shadow-xl ${className}`}
+      className={`flex h-10 w-10 items-center justify-center rounded-xl bg-secondary shadow-xl ${className}`}
       onClick={handleClick}
     >
       <ThemeIcon theme={theme as string} />

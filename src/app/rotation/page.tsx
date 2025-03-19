@@ -3,6 +3,7 @@
 import { ChampionList } from '@/components/champions/champion-list';
 import { LoadingSpinners } from '@/components/common/loading-spinners';
 import { useGetRotation } from '@/tanstack/queries';
+import { Champion } from '@/types/champions-types';
 import { Suspense } from 'react';
 
 const RotationPage = () => {
@@ -17,7 +18,8 @@ const RotationPage = () => {
 };
 
 const RotationPageList = () => {
-  const { data: rotation } = useGetRotation();
+  // const { data: rotation } = useGetRotation();
+  const rotation: Champion[] = [];
   return <ChampionList champions={rotation} />;
 };
 

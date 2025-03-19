@@ -1,4 +1,4 @@
-import { Item } from '@/types/item';
+import { Item } from '@/types/item-types';
 import { ItemCard } from './item-card';
 import { getItems } from '@/api/riot-api';
 
