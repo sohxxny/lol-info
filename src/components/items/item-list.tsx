@@ -1,6 +1,6 @@
 import { Item } from '@/types/item-types';
 import { ItemCard } from './item-card';
-import { getItems } from '@/api/riot-api';
+import { getItems } from '@/services/riot-api';
 
 // * 아이템 리스트 컴포넌트
 export const ItemList = async () => {

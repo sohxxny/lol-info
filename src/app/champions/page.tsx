@@ -1,4 +1,4 @@
-import { getChampions } from '@/api/riot-api';
+import { getChampions } from '@/services/riot-api';
 import { ChampionList } from '@/components/champions/champion-list';
 import { LoadingSpinners } from '@/components/common/loading-spinners';
 import { Champion } from '@/types/champions-types';

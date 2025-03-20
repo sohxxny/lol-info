@@ -5,11 +5,15 @@ import {
   UseSuspenseQueryResult,
 } from '@tanstack/react-query';
 
-export const useGetRotation = (): UseSuspenseQueryResult<Champion[]> => {
+export const useGetRotation = (): UseSuspenseQueryResult<Champion[], Error> => {
   return useSuspenseQuery({
     queryKey: ['rotation'],
     queryFn: async () => {
+      if (typeof window === 'undefined') {
+        return [];
+      }
       const response = await fetch(ROUTE_HANDLER_ROTATION_URL);
+      console.log('response ➡️', response);
       return response.json();
     },
   });

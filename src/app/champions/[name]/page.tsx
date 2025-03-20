@@ -1,4 +1,4 @@
-import { getChampion } from '@/api/riot-api';
+import { getChampion } from '@/services/riot-api';
 import { SpellCard } from '@/components/champions/spell-card';
 import { API_CHAMPION_IMAGE_URL } from '@/constants';
 import { ChampionDetail } from '@/types/champions-types';

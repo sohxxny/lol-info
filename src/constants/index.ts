@@ -2,7 +2,7 @@
 const API_VERSION = '15.5.1';
 const BASE_URL = `https://ddragon.leagueoflegends.com/cdn/${API_VERSION}`;
 const API_KEY = process.env.RIOT_API_KEY;
-// const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 // 엔드포인트 포함된 url
 export const API_ITEMS_URL = `

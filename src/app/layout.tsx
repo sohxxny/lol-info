@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
 import { Header } from '@/components/layout/header';
-import { QueryProvider } from '@/tanstack/provider';
 import { ThemeButton } from '@/components/common/theme-button';
 import { ThemeProvider } from 'next-themes';
 
@@ -20,13 +19,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`flex flex-col antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <QueryProvider>
-            <header className="fixed flex w-full justify-center bg-background shadow-lg">
-              <Header />
-            </header>
-            <main className="w-full p-[50px] pt-[100px]">{children}</main>
-            <ThemeButton className="fixed right-5 top-20" />
-          </QueryProvider>
+          <header className="fixed flex w-full justify-center bg-background shadow-lg">
+            <Header />
+          </header>
+          <main className="w-full p-[50px] pt-[100px]">{children}</main>
+          <ThemeButton className="fixed right-5 top-20" />
         </ThemeProvider>
       </body>
     </html>
